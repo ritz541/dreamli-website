@@ -8,7 +8,7 @@
     <title>Email Confirmed - DREAMLI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,288 +17,140 @@
         }
 
         body {
-            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace;
-            background: #000;
-            color: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Animated background gradient */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(0, 255, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(0, 255, 255, 0.08) 0%, transparent 50%);
-            animation: gradientShift 15s ease infinite;
-            z-index: 0;
-        }
-
-        @keyframes gradientShift {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.8;
-                transform: scale(1.1);
-            }
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 650px;
+            max-width: 600px;
             width: 100%;
             text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            color: #00ff00;
-            font-size: clamp(2.5em, 8vw, 3.5em);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            font-weight: 900;
-            animation: glow 2s ease-in-out infinite alternate;
-            letter-spacing: 2px;
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-            }
-
-            to {
-                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00;
-            }
-        }
-
-        .message {
-            border: 3px solid #00ff00;
-            padding: 50px 40px;
-            margin-bottom: 40px;
-            background: rgba(0, 255, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(0, 255, 0, 0.2),
-                inset 0 0 30px rgba(0, 255, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .message:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 40px rgba(0, 255, 0, 0.3),
-                inset 0 0 40px rgba(0, 255, 0, 0.08);
-        }
-
-        /* Corner decorations */
-        .message::before,
-        .message::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #00ff00;
-        }
-
-        .message::before {
-            top: 10px;
-            left: 10px;
-            border-right: none;
-            border-bottom: none;
-        }
-
-        .message::after {
-            bottom: 10px;
-            right: 10px;
-            border-left: none;
-            border-top: none;
-        }
-
-        .message p {
-            font-size: clamp(1.1em, 3vw, 1.3em);
-            margin-bottom: 20px;
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
         }
 
         .checkmark {
-            font-size: clamp(4em, 15vw, 6em);
-            color: #00ff00;
-            margin-bottom: 30px;
-            animation: checkmarkAppear 0.6s ease-out;
-            display: inline-block;
-            filter: drop-shadow(0 0 20px #00ff00);
-        }
-
-        @keyframes checkmarkAppear {
-            0% {
-                transform: scale(0) rotate(-180deg);
-                opacity: 0;
-            }
-
-            50% {
-                transform: scale(1.2) rotate(10deg);
-            }
-
-            100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-            }
-        }
-
-        .instructions {
-            border: 2px solid #ff00ff;
-            padding: 40px 35px;
-            background: rgba(255, 0, 255, 0.08);
-            margin-top: 40px;
-            position: relative;
-            box-shadow: 0 0 25px rgba(255, 0, 255, 0.15),
-                inset 0 0 25px rgba(255, 0, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .instructions:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 35px rgba(255, 0, 255, 0.25),
-                inset 0 0 30px rgba(255, 0, 255, 0.08);
-        }
-
-        .instructions h2 {
-            color: #ff00ff;
-            margin-bottom: 25px;
-            font-size: clamp(1.4em, 4vw, 1.8em);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
-        }
-
-        .instructions ol {
-            text-align: left;
-            margin: 0 auto;
-            max-width: 450px;
-            counter-reset: step-counter;
-            list-style: none;
-        }
-
-        .instructions li {
-            margin-bottom: 18px;
-            padding-left: 45px;
-            color: #00ffff;
-            font-size: clamp(1em, 2.5vw, 1.1em);
-            position: relative;
-            line-height: 1.6;
-            counter-increment: step-counter;
-        }
-
-        .instructions li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 30px;
-            height: 30px;
-            background: rgba(0, 255, 255, 0.15);
-            border: 2px solid #00ffff;
+            width: 80px;
+            height: 80px;
+            background: #22c55e;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .checkmark svg {
+            width: 48px;
+            height: 48px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            font-size: 32px;
+            margin-bottom: 16px;
             font-weight: 700;
-            font-size: 0.9em;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .message {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .message p {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 12px;
+        }
+
+        .message p:last-child {
+            margin-bottom: 0;
         }
 
         .app-name {
-            font-size: clamp(2.5em, 6vw, 3em);
-            color: #ff00ff;
-            font-weight: 900;
-            margin: 30px 0;
-            letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
-            animation: pulse 3s ease-in-out infinite;
+            font-size: 24px;
+            color: #1a1a1a;
+            font-weight: 700;
+            margin: 16px 0;
         }
 
-        @keyframes pulse {
+        .instructions {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 32px;
+            margin-top: 32px;
+            text-align: left;
+        }
 
-            0%,
-            100% {
-                transform: scale(1);
-            }
+        .instructions h2 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
 
-            50% {
-                transform: scale(1.05);
-            }
+        .instructions ol {
+            margin: 0 auto;
+            max-width: 400px;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 12px;
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         .countdown {
-            color: #00ffff;
-            margin-top: 30px;
-            font-size: clamp(0.9em, 2vw, 1em);
-            padding: 15px 25px;
-            background: rgba(0, 255, 255, 0.1);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 5px;
-            display: inline-block;
+            color: #6b7280;
+            margin-top: 24px;
+            font-size: 14px;
         }
 
         .footer {
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 1px solid #333;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
         }
 
         .footer a {
-            color: #00ffff;
+            color: #3b82f6;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1em;
-            padding: 8px 15px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            display: inline-block;
+            margin: 0 12px;
+            font-size: 14px;
         }
 
         .footer a:hover {
-            color: #ff00ff;
-            border: 1px solid #ff00ff;
-            background: rgba(255, 0, 255, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.3);
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
-            .message {
-                padding: 35px 25px;
+            h1 {
+                font-size: 28px;
             }
 
+            .message,
             .instructions {
-                padding: 30px 20px;
-            }
-
-            .instructions ol {
-                max-width: 100%;
+                padding: 24px;
             }
 
             .footer a {
                 display: block;
-                margin: 10px auto;
-                max-width: 200px;
+                margin: 8px 0;
             }
         }
     </style>
@@ -306,7 +158,11 @@
 
 <body>
     <div class="container">
-        <div class="checkmark">✓</div>
+        <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+                <path d="M14 27l7.5 7.5L38 18"/>
+            </svg>
+        </div>
         <h1>Email Confirmed!</h1>
 
         <div class="message">
@@ -318,7 +174,6 @@
         <div class="instructions">
             <h2>Next Steps:</h2>
             <ol>
-                <li>Close this page or tab</li>
                 <li>Open the DREAMLI app on your device</li>
                 <li>Tap "Login" or "Sign In"</li>
                 <li>Enter your email and password</li>
