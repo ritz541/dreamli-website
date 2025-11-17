@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your DREAMLI email has been confirmed successfully. Return to the app to login.">
+    <title>Email Confirmed - DREAMLI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace;
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00ff00;
+            font-size: clamp(2em, 8vw, 3em);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 900;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            }
+
+            to {
+                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00;
+            }
+        }
+
+        .message {
+            border: 3px solid #00ff00;
+            padding: 40px;
+            margin-bottom: 30px;
+            background: rgba(0, 255, 0, 0.05);
+        }
+
+        .message p {
+            font-size: clamp(1em, 3vw, 1.2em);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .checkmark {
+            font-size: clamp(3em, 15vw, 5em);
+            color: #00ff00;
+            margin-bottom: 20px;
+            animation: bounce 1s ease-in-out;
+            display: inline-block;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .instructions {
+            border: 2px solid #ff00ff;
+            padding: 30px;
+            background: rgba(255, 0, 255, 0.05);
+            margin-top: 30px;
+        }
+
+        .instructions h2 {
+            color: #ff00ff;
+            margin-bottom: 15px;
+            font-size: clamp(1.2em, 4vw, 1.5em);
+            font-weight: 700;
+        }
+
+        .instructions ol {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            color: #00ffff;
+            font-size: clamp(0.9em, 2.5vw, 1em);
+        }
+
+        .app-name {
+            font-size: clamp(2em, 6vw, 2.5em);
+            color: #ff00ff;
+            font-weight: 900;
+            margin: 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .countdown {
+            color: #00ffff;
+            margin-top: 20px;
+            font-size: clamp(0.8em, 2vw, 0.9em);
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer a {
+            color: #00ffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+        }
+
+        .footer a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .message {
+                padding: 30px 20px;
+            }
+
+            .instructions {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="checkmark">✓</div>
+        <h1>Email Confirmed!</h1>
+
+        <div class="message">
+            <p>Your email has been successfully verified.</p>
+            <p class="app-name">DREAMLI</p>
+            <p>You can now log in to your account and start sharing your dreams.</p>
+        </div>
+
+        <div class="instructions">
+            <h2>Next Steps:</h2>
+            <ol>
+                <li>Close this page or tab</li>
+                <li>Open the DREAMLI app on your device</li>
+                <li>Tap "Login" or "Sign In"</li>
+                <li>Enter your email and password</li>
+                <li>Start exploring and sharing your dreams!</li>
+            </ol>
+        </div>
+
+        <p class="countdown">You can safely close this page now.</p>
+
+        <div class="footer">
+            <a href="https://dreamli.app">Home</a>
+            <a href="https://dreamli.app/privacy-policy">Privacy Policy</a>
+        </div>
+    </div>
+
+    <script>
+        // Log confirmation for analytics (if needed)
+        console.log('Email confirmation page loaded');
+
+        // Optional: Try to detect if opened in a mobile browser
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // Update message for mobile users
+            const countdown = document.querySelector('.countdown');
+            if (countdown) {
+                countdown.textContent = 'Tap the back button or close this tab to return to the app.';
+            }
+        }
+    </script>
+</body>
+
+</html>
