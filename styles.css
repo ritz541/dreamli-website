@@ -554,43 +554,7 @@ body::after {
     }
 }
 
-/* Testimonials */
-.testimonials {
-    padding: 4rem 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.04));
-    color: var(--text-dark);
-}
-
-.testimonials .section-title {
-    color: var(--text-dark);
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.testimonial-card {
-    background: var(--bg-card);
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
-    color: var(--text-light);
-}
-
-.testimonial-quote {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-}
-
-.testimonial-author {
-    font-weight: 700;
-    color: var(--text-dark);
-}
+/* Testimonials removed per user request */
 
 /* Footer */
 .footer {
