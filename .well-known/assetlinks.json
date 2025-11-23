@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.example.desireland_frontend",
+            "sha256_cert_fingerprints": [
+                "E2:12:25:38:BF:82:6D:CA:DE:41:C1:54:FD:69:07:03:02:27:2E:F0:6C:E3:C9:E2:FB:2F:C6:70:1E:65:87:E7"
+            ]
+        }
+    }
+]
