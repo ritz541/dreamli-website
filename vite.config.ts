@@ -2,9 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
-// Replace the basePath logic with a simpler approach for GitHub Pages
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || 'dreamli-website';
-const basePath = process.env.NODE_ENV === 'production' ? `/${repoName}/` : '/';
+// For custom domain hosting, base should be '/'
+const basePath = '/';
 
 export default defineConfig({
   base: basePath,
