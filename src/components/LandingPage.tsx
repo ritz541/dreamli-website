@@ -98,28 +98,23 @@ export function LandingPage() {
             headlines and connect with others.
           </p>
 
-          {/* Download Button (links to APK placed in public/) */}
+          {/* Indus App Store Badge */}
           <a
-            href="/dreamli.apk"
-            download
-            className="group relative inline-block px-12 py-5 bg-transparent border-2 hover:bg-white/5 transition-all duration-300"
-            style={{
-              borderColor: "#ff006e",
-              boxShadow: "0 0 20px #ff006e, 0 0 40px #ff006e",
-            }}
-            aria-label="Download Dreamli APK (Android)"
+            href="https://indusapp.store/f0tupjal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-block hover:opacity-90 transition-opacity duration-300"
+            aria-label="Get Dreamli on Indus App Store"
           >
-            <span
-              className="flex items-center gap-3"
-              style={{ fontSize: "1.25rem", fontWeight: 700 }}
-            >
-              <Download size={24} style={{ color: "#ff006e" }} />
-              <span style={{ color: "#ff006e" }}>DOWNLOAD APK</span>
-            </span>
+            <img
+              src="/badge-black-full-color-english.png"
+              alt="Get it on Indus App Store"
+              className="h-16 mx-auto"
+            />
           </a>
 
           <p className="text-white/40 text-sm mt-4">
-            Available on Android only
+            Available on Indus App Store
           </p>
         </div>
       </section>
@@ -267,23 +262,19 @@ export function LandingPage() {
             Join our growing community — 2 active users
           </p>
 
+          {/* Indus App Store Badge */}
           <a
-            href="/dreamli.apk"
-            download
-            className="group relative inline-block px-16 py-6 bg-transparent border-2 hover:bg-white/5 transition-all duration-300"
-            style={{
-              borderColor: "#00ff41",
-              boxShadow: "0 0 20px #00ff41, 0 0 40px #00ff41",
-            }}
-            aria-label="Download Dreamli APK (Android)"
+            href="https://indusapp.store/f0tupjal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-block hover:opacity-90 transition-opacity duration-300"
+            aria-label="Get Dreamli on Indus App Store"
           >
-            <span
-              className="flex items-center gap-3"
-              style={{ fontSize: "1.5rem", fontWeight: 900 }}
-            >
-              <Download size={28} style={{ color: "#00ff41" }} />
-              <span style={{ color: "#00ff41" }}>GET STARTED NOW</span>
-            </span>
+            <img
+              src="/badge-black-full-color-english.png"
+              alt="Get it on Indus App Store"
+              className="h-20 mx-auto"
+            />
           </a>
         </div>
       </section>
