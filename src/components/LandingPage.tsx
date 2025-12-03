@@ -301,6 +301,14 @@ export function LandingPage() {
                 Privacy
               </a>
               <a
+                href="/csae-policy.html"
+                className="hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Child Safety
+              </a>
+              <a
                 href="#"
                 className="hover:text-white transition-colors"
               >
