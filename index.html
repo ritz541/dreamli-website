@@ -4,44 +4,413 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mobile Feed UI Design</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <script>
-    // Single Page Apps for GitHub Pages
-    // MIT License
-    // https://github.com/rafgraph/spa-github-pages
-    // This script checks to see if a redirect is present in the query string,
-    // converts it back into the correct url and adds it to the
-    // browser's history using window.history.replaceState(...),
-    // which won't cause the browser to attempt to load the new url.
-    // When the single page app is loaded further down in this file,
-    // the correct url will be waiting in the browser's history for
-    // the single page app to route accordingly.
-    (function (l) {
-      if (l.search) {
-        var q = {};
-        l.search.slice(1).split('&').forEach(function (v) {
-          var a = v.split('=');
-          q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-        });
-        if (q.p !== undefined) {
-          window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + (q.p || '') +
-            (q.q ? ('?' + q.q) : '') +
-            (q.h ? ('#' + q.h) : ''));
-        }
+  <title>Dreamli - Mobile Feed UI Design</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <style>
+    /* Handcrafted styles with a personal touch */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: #4f46e5;
+      font-size: 1.8rem;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .brand:hover {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 6rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #64748b;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .badge-link {
+      display: inline-block;
+      transition: transform 0.2s;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+    }
+
+    .badge-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.25);
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+      height: 100%;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-color: #c7d2fe;
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      background: #eef2ff;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .feature-icon i {
+      font-size: 1.8rem;
+      color: #4f46e5;
+    }
+
+    .feature-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 1rem;
+    }
+
+    .feature-text {
+      color: #64748b;
+      font-size: 1.05rem;
+    }
+
+    .screenshots-bg {
+      background-color: #f8fafc;
+    }
+
+    .screenshot-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 2rem;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .screenshot-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .screenshot-title {
+      padding: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e293b;
+      text-align: center;
+      margin: 0;
+    }
+
+    .testimonial {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e2e8f0;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonial-text {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #334155;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: #4f46e5;
+      font-size: 1.1rem;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    .footer {
+      background: #0f172a;
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer p {
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 0;
       }
-    }(window.location))
-  </script>
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .cta h2 {
+        font-size: 1.8rem;
+      }
+
+      .feature-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="brand" href="#">Dreamli</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Experience the Future of Social Media</h1>
+      <p>Discover a revolutionary mobile feed design that transforms how you connect, share, and explore with stunning
+        visuals and intuitive interactions.</p>
+
+      <div class="mt-4">
+        <a href='https://indusapp.store/51a0s8kv' class="badge-link">
+          <img alt='Get it on Indus Appstore' src='./images/badge-black-full-color-english.png' style="height: 60px;">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Amazing Features</h2>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-lightning-charge"></i>
+            </div>
+            <h3 class="feature-title">Lightning Fast</h3>
+            <p class="feature-text">Experience blazing performance with our optimized design that loads instantly and
+              responds to every touch.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h3 class="feature-title">Mobile First</h3>
+            <p class="feature-text">Designed exclusively for mobile with intuitive gestures and interactions that feel
+              natural in your hands.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-stars"></i>
+            </div>
+            <h3 class="feature-title">Beautiful UI</h3>
+            <p class="feature-text">Stunning visuals with smooth animations and transitions that captivate and engage
+              users from the first tap.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section class="section screenshots-bg" id="screenshots">
+    <div class="container">
+      <h2 class="section-title">App Screenshots</h2>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="screenshot-card">
+            <img src="./images/login.png" class="screenshot-img" alt="Login Screen">
+            <h4 class="screenshot-title">Login Screen</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="screenshot-card">
+            <img src="./images/feed.png" class="screenshot-img" alt="Feed Screen">
+            <h4 class="screenshot-title">Feed Screen</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="screenshot-card">
+            <img src="./images/profile.png" class="screenshot-img" alt="Profile Screen">
+            <h4 class="screenshot-title">Profile Screen</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="screenshot-card">
+            <img src="./images/search.png" class="screenshot-img" alt="Search Screen">
+            <h4 class="screenshot-title">Search Screen</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="screenshot-card">
+            <img src="./images/add.png" class="screenshot-img" alt="Add Content Screen">
+            <h4 class="screenshot-title">Add Content</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="screenshot-card">
+            <img src="./images/share.png" class="screenshot-img" alt="Share Screen">
+            <h4 class="screenshot-title">Share Experience</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What Users Say</h2>
+
+      <div class="testimonial">
+        <p class="testimonial-text">"This app completely changed how I interact with social media. The design is
+          incredible and the experience is unlike anything I've ever used before!"</p>
+        <p class="testimonial-author">Alex Johnson, Tech Enthusiast</p>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Transform Your Social Experience?</h2>
+      <p>Join thousands of users who have already discovered the future of social media with Dreamli.</p>
+
+      <div>
+        <a href='https://indusapp.store/51a0s8kv' class="badge-link">
+          <img alt='Get it on Indus Appstore' src='./images/badge-black-full-color-english.png' style="height: 60px;">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Dreamli. All rights reserved.</p>
+      <p>Designed with ❤️ for the future of social media</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
