@@ -1,14 +1,27 @@
 [
-    {
-        "relation": [
-            "delegate_permission/common.handle_all_urls"
-        ],
-        "target": {
-            "namespace": "android_app",
-            "package_name": "com.dreamli.app",
-            "sha256_cert_fingerprints": [
-                "E2:12:25:38:BF:82:6D:CA:DE:41:C1:54:FD:69:07:03:02:27:2E:F0:6C:E3:C9:E2:FB:2F:C6:70:1E:65:87:E7"
-            ]
-        }
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.example.desireland_frontend",
+      "sha256_cert_fingerprints": [
+        "E2:12:25:38:BF:82:6D:CA:DE:41:C1:54:FD:69:07:03:02:27:2E:F0:6C:E3:C9:E2:FB:2F:C6:70:1E:65:87:E7"
+      ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dreamli.app",
+      "sha256_cert_fingerprints": [
+        "62:70:DF:40:02:AF:E5:7F:B3:2C:6D:76:8C:65:26:F0:96:46:7D:E5:3F:8C:E7:2E:8B:F7:E6:83:C4:B9:D6:6A"
+      ]
+    }
+  }
 ]
